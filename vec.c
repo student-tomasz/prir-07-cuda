@@ -23,13 +23,18 @@ int vecread(const char *v_fpath, float **v, int *v_len)
     return i;
 }
 
-float *vecncpy(float **u, float *v, int v_len)
+float *vecalloc(float **v, int v_len)
 {
-    *u = (float *)malloc(sizeof(**u) * v_len);
-    if (u == NULL) exitmf("Failed at malloc in vecncpy\n");
-    void *rslt = memcpy(*u, v, sizeof(*v) * v_len);
+    *v = (float *)malloc(sizeof(**v) * v_len);
+    if (v == NULL) exitmf("Failed at malloc in vecalloc\n");
+    return *v;
+}
+
+float *vecncpy(float *u, float *v, int v_len)
+{
+    void *rslt = memcpy(u, v, sizeof(*v) * v_len);
     if (rslt == NULL) exitmf("Failed at memcpy in vecncpy\n");
-    return *u;
+    return u;
 }
 
 int veccmp(float *v, float *u, int v_len)

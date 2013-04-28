@@ -26,7 +26,7 @@ clean:
 	rm -rf cube_seq{,.o} cube_cuda{,.o} $(objs)
 
 bench: all
-	./cube_cuda v512000.dat v512000_cubed.dat
+	./cube_cuda v512000.dat v512000_cubed.dat 1000
 
 run: all
-	./cube_cuda v512.dat v512_cubed.dat
+	./cube_cuda v512.dat v512_cubed.dat 1
