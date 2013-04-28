@@ -103,6 +103,6 @@ void cuda_fin(float *h_v, float *d_v, int v_len)
     cudaError_t rslt = cudaFree(d_v);
     if (rslt != cudaSuccess) exitmf("Failed at cudaFree\n");
 
-    rslt = cudaDeviceReset();
-    if (rslt != cudaSuccess) exitmf("Failed at cudaDeviceReset\n");
+    // rslt = cudaDeviceReset();
+    // if (rslt != cudaSuccess) exitmf("Failed at cudaDeviceReset\n");
 }

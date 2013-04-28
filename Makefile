@@ -2,7 +2,7 @@ cc=g++
 nvcc=nvcc
 ccflags=-m64
 nvccflags=-m64
-ldflags=-L/usr/local/cuda/lib -lcudart
+ldflags=-L/usr/local/cuda/lib64 -L/usr/local/cuda/lib -lcudart
 deps=args.h exitmf.h vec.h
 objs=args.o exitmf.o vec.o
 
