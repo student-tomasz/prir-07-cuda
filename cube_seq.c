@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
     char *v_fpath, *vc_fpath;
     int b_cnt;
 
-    args(argc, argv, &v_fpath, &vc_fpath, &b_cnt);
+    args(argc, argv, &v_fpath, &vc_fpath);
 
     vecread(v_fpath, &v, &v_len);
     vecread(vc_fpath, &vc, &vc_len);

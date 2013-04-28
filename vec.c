@@ -23,7 +23,7 @@ int vecread(const char *v_fpath, float **v, int *v_len)
     return i;
 }
 
-float *vecncpy(float **u, float *v, const int v_len)
+float *vecncpy(float **u, float *v, int v_len)
 {
     *u = (float *)malloc(sizeof(**u) * v_len);
     if (u == NULL) exitmf("Failed at malloc in vecncpy\n");
@@ -36,7 +36,7 @@ int veccmp(float *v, float *u, int v_len)
 {
     int i;
     for (i = 0; i < v_len; i++) {
-        // fprintf(stderr, "calc: %f, precalc: %f\n", v[i], u[i]);
+        // fprintf(stderr,"%6d: calc: %f, precalc: %f\n", i, v[i], u[i]);
         if (fabs(v[i] - u[i]) > EPS) {
             return 1;
         }
